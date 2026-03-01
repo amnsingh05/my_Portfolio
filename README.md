@@ -7,7 +7,7 @@ This portfolio showcases my projects, technical skills, and achievements as an a
 
 ## 🌐 Live Website
 
-🔗 [Visit Portfolio](https://amnsingh05.github.io/your-portfolio-repo-name/)
+🔗 [Visit Portfolio](https://amnsingh05.github.io/my_Portfolio/)
 
 ---
 

@@ -11,6 +11,8 @@
     --accent: #00e0ff;
     --dark-bg: #000000;
     --text-light: #cccccc;
+    --card-bg: rgba(255, 255, 255, 0.05);
+    --border-light: rgba(255, 255, 255, 0.08);
 }
 
 html {
@@ -46,8 +48,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(14px);
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-light);
     z-index: 1000;
 }
 
@@ -62,6 +65,22 @@ body {
     color: #ffffff;
     font-weight: 500;
     transition: 0.3s ease;
+    position: relative;
+}
+
+.nav-left a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: -5px;
+    background: var(--accent);
+    transition: 0.3s ease;
+}
+
+.nav-left a:hover::after {
+    width: 100%;
 }
 
 .nav-left a:hover {
@@ -89,7 +108,7 @@ body {
 ========================================= */
 .hero {
     min-height: 100vh;
-    padding: 150px 8% 80px; /* extra top space for navbar */
+    padding: 150px 8% 80px;
     display: flex;
     align-items: center;
 }
@@ -147,8 +166,8 @@ body {
 }
 
 .btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px rgba(0, 224, 255, 0.6);
+    transform: translateY(-4px);
+    box-shadow: 0 0 25px rgba(0, 224, 255, 0.6);
 }
 
 .btn-outline {
@@ -173,12 +192,12 @@ body {
 .profile img {
     width: 260px;
     border-radius: 50%;
-    box-shadow: 0 0 30px rgba(0, 224, 255, 0.5);
+    box-shadow: 0 0 40px rgba(0, 224, 255, 0.4);
     transition: 0.4s ease;
 }
 
 .profile img:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 /* =========================================
@@ -192,6 +211,7 @@ section {
     text-align: center;
     font-size: 2.6rem;
     margin-bottom: 40px;
+    letter-spacing: 1px;
 }
 
 .section-title span {
@@ -268,6 +288,11 @@ section {
     justify-content: space-between;
     gap: 60px;
     margin-top: 60px;
+    transition: 0.4s ease;
+}
+
+.project-wrapper:hover {
+    transform: translateY(-10px);
 }
 
 .project-image {
@@ -279,6 +304,11 @@ section {
     max-width: 500px;
     border-radius: 20px;
     box-shadow: 0 0 40px rgba(0, 224, 255, 0.2);
+    transition: 0.4s ease;
+}
+
+.project-image img:hover {
+    transform: scale(1.03);
 }
 
 .project-content {
@@ -321,17 +351,19 @@ section {
     color: #000;
 }
 
-.live-btn:hover {
-    box-shadow: 0 0 20px rgba(0, 224, 255, 0.6);
+.live-btn:hover,
+.repo-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(0, 224, 255, 0.5);
 }
 
 /* =========================================
    CARDS
 ========================================= */
 .card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-light);
     padding: 25px;
     border-radius: 15px;
     margin-bottom: 25px;
@@ -349,7 +381,7 @@ section {
 footer {
     text-align: center;
     padding: 30px;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.9);
     color: #aaaaaa;
     font-size: 0.9rem;
 }
@@ -408,7 +440,6 @@ footer {
 /* =========================================
    CONTACT SECTION
 ========================================= */
-
 .contact-section {
     text-align: center;
     padding: 130px 8%;
@@ -428,14 +459,14 @@ footer {
 }
 
 .contact-card {
-    background: rgba(255, 255, 255, 0.05);
+    background: var(--card-bg);
     backdrop-filter: blur(12px);
     border-radius: 20px;
     padding: 40px 20px;
     text-decoration: none;
     color: white;
     transition: 0.4s ease;
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid var(--border-light);
 }
 
 .contact-card i {
