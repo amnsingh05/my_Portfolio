@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aman Singh | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar">
+    <ul class="nav-left">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Technologies</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+        <a href="https://github.com/amnsingh05" target="_blank" class="icon">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/amnsingh0" target="_blank" class="icon">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://linktr.ee/amnsingh" target="_blank" class="icon">
+            <i class="fas fa-link"></i>
+        </a>
+    </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+    <div class="hero-content">
+
+        <div class="text hidden">
+            <h3>Hello There 👋</h3>
+            <h1>I am <span>Aman Singh</span></h1>
+            <p>Aspiring AI/ML Engineer & Full-Stack Developer</p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn">View My Projects</a>
+                <!-- Make sure resume.pdf exists in same folder -->
+                <a href="assets\Resume.pdf" download="Aman_Singh_Resume.pdf" class="btn-outline">
+                    Download Resume
+                </a>
+            </div>
+        </div>
+
+        <div class="profile hidden">
+            <img src="profile.jpg" alt="Aman Singh">
+        </div>
+
+    </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="about-section hidden">
+    <h2 class="section-title">ABOUT ME</h2>
+
+    <p class="about-text">
+        I am an aspiring AI/ML Engineer and Software Developer with strong 
+        foundations in C++, Data Structures & Algorithms, Web Development,
+        and system design. I enjoy building secure, intelligent systems 
+        and real-world applications that solve meaningful problems.
+    </p>
+</section>
+
+<!-- ================= TECHNOLOGIES ================= -->
+<section id="skills" class="skills-section hidden">
+    <h2 class="section-title">TECHNOLOGIES</h2>
+
+    <p class="skills-subtext">
+        Tools and technologies I use to build scalable and intelligent systems.
+    </p>
+
+    <div class="skills-grid">
+        <div class="skill-item hidden"><i class="fab fa-html5"></i><p>HTML</p></div>
+        <div class="skill-item hidden"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
+        <div class="skill-item hidden"><i class="fab fa-js"></i><p>JavaScript</p></div>
+        <div class="skill-item hidden"><i class="fab fa-python"></i><p>Python</p></div>
+        <div class="skill-item hidden"><i class="fas fa-code"></i><p>C++</p></div>
+        <div class="skill-item hidden"><i class="fas fa-terminal"></i><p>C</p></div>
+        <div class="skill-item hidden"><i class="fas fa-chart-line"></i><p>Streamlit</p></div>
+        <div class="skill-item hidden"><i class="fas fa-database"></i><p>MySQL</p></div>
+        <div class="skill-item hidden"><i class="fas fa-cube"></i><p>3D Printing</p></div>
+        <div class="skill-item hidden"><i class="fas fa-pen-nib"></i><p>Figma</p></div>
+        <div class="skill-item hidden"><i class="fas fa-palette"></i><p>Canva</p></div>
+    </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="projects-section hidden">
+    <h2 class="section-title">MY PROJECTS</h2>
+
+    <!-- ===== Project 1 ===== -->
+    <div class="project-wrapper hidden">
+        <div class="project-image">
+            <img src="images/VS Code Error Sound Extension.png" alt="VS Code Extension">
+        </div>
+
+        <div class="project-content">
+            <h3>VS Code Error Sound Extension</h3>
+            <p>
+                A productivity-focused VS Code extension that plays sound alerts 
+                when errors occur, improving debugging awareness and workflow efficiency.
+            </p>
+
+            <p class="tech-stack">
+                <strong>Tech Stack:</strong> JavaScript · VS Code API · Node.js
+            </p>
+
+            <div class="project-buttons">
+                <a href="https://github.com/amnsingh05/terminal_error_sound.git" target="_blank" class="repo-btn">
+                    <i class="fab fa-github"></i> Repository
+                </a>
+
+                <a href="https://marketplace.visualstudio.com/items?itemName=amnsinghdev.amnsingh27-terminal-error-sound"
+                   target="_blank" class="live-btn">
+                    <i class="fas fa-external-link-alt"></i> View Project
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Project 2 ===== -->
+    <div class="project-wrapper reverse hidden">
+        <div class="project-image">
+            <img src="images/face_recognition_attendance_system.png" alt="Face Recognition Attendance System">
+        </div>
+
+        <div class="project-content">
+            <h3>🎯 Face Recognition Attendance System</h3>
+            <p>
+                A secure attendance system integrating real-time face recognition,
+                liveness detection (anti-spoofing), and geo-fencing validation
+                to prevent fraudulent attendance marking.
+            </p>
+
+            <p class="tech-stack">
+                <strong>Tech Stack:</strong> Python · OpenCV · CVZone · Geopy · Pandas · Tkinter
+            </p>
+
+            <div class="project-buttons">
+                <a href="https://github.com/amnsingh05/face-recognition-attendance-system.git"
+                   target="_blank" class="repo-btn">
+                    <i class="fab fa-github"></i> Repository
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Project 3 ===== -->
+    <div class="project-wrapper hidden">
+        <div class="project-image">
+            <img src="images/habit_tracker_web_app.png" alt="Habit Tracker Web Application">
+        </div>
+
+        <div class="project-content">
+            <h3>📊 Habit Tracker Web Application</h3>
+
+            <p>
+                A cloud-based habit tracking system built using HTML, CSS, and JavaScript
+                with secure Firebase Authentication and real-time cloud storage via Firestore.
+            </p>
+
+            <p>
+                It allows users to track daily habits, maintain streaks, manage tasks,
+                and monitor productivity through an interactive dashboard.
+                Currently developed for personal productivity usage.
+            </p>
+
+            <p class="tech-stack">
+                <strong>Tech Stack:</strong>
+                HTML · CSS · JavaScript · Firebase Authentication · Firebase Firestore
+            </p>
+
+            <p>
+                🚀 <strong>Planned Enhancements:</strong>
+                Weekly tracking view, analytics graphs, performance insights,
+                advanced task tracking, and progress visualization.
+            </p>
+
+            <div class="project-buttons">
+                <a href="https://github.com/amnsingh05/habit_tracker.git"
+                   target="_blank" class="repo-btn">
+                    <i class="fab fa-github"></i> Repository
+                </a>
+
+                <a href="https://amnsingh05.github.io/habit_tracker/"
+                   target="_blank" class="live-btn">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= ACHIEVEMENTS ================= -->
+<section id="achievements" class="hidden">
+    <h2 class="section-title">ACHIEVEMENTS & CERTIFICATIONS</h2>
+
+    <div class="card hidden">
+        <h3>Achievements</h3>
+        <ul>
+            <li>Front-End Development Intern at SpikeTech (September 2025)</li>
+            <li>Developed a secure AI-based attendance system</li>
+            <li>Strong foundation in C++, DSA & System Design</li>
+        </ul>
+    </div>
+
+    <div class="card hidden">
+        <h3>Certifications</h3>
+        <ul>
+            <li>Web Development Certification – (Add Platform Name)</li>
+            <li>Python Programming – (Add Platform Name)</li>
+            <li>Data Structures & Algorithms – (Add Platform Name)</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact" class="contact-section hidden">
+    <h2 class="section-title">LET'S CONNECT</h2>
+
+    <p class="contact-subtext">
+        Open to internships, collaborations, and exciting tech opportunities.
+    </p>
+
+    <div class="contact-container">
+        <a href="mailto:amansinghakr@gmail.com" class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>amansinghakr@gmail.com</p>
+        </a>
+
+        <a href="https://github.com/amnsingh05" target="_blank" class="contact-card">
+            <i class="fab fa-github"></i>
+            <h3>GitHub</h3>
+            <p>github.com/amnsingh05</p>
+        </a>
+
+        <a href="https://linkedin.com/in/amnsingh0" target="_blank" class="contact-card">
+            <i class="fab fa-linkedin"></i>
+            <h3>LinkedIn</h3>
+            <p>linkedin.com/in/amnsingh0</p>
+        </a>
+
+        <a href="https://linktr.ee/amnsingh" target="_blank" class="contact-card">
+            <i class="fas fa-link"></i>
+            <h3>All Links</h3>
+            <p>linktr.ee/amnsingh</p>
+        </a>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+    © 2026 Aman Singh | Designed & Built with Consistency 🚀
+</footer>
+
+<!-- ================= SCROLL ANIMATION ================= -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        } else {
+            entry.target.classList.remove("show");
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
