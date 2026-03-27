@@ -1,98 +1,86 @@
-🚀Aman Singh – Portfolio Website
+# 🚀 Aman Singh – Portfolio Website
 
-A modern, responsive, and interactive portfolio website showcasing my work as an AI/ML Engineer and Full-Stack Developer. Built with a focus on performance, clean UI, and immersive user experience.
+A modern, responsive, and interactive portfolio website showcasing my work as an **AI/ML Engineer** and **Full-Stack Developer**.
 
-🌐 Live Demo
+---
 
-👉 https://amnsingh05.github.io/my_Portfolio/
+## 🌐 Live Demo
+https://amnsingh05.github.io/my_Portfolio/
 
-📌 About The Project
+---
 
-This portfolio represents my journey in AI, Web Development, and Software Engineering.
+## 📌 About The Project
+
+This portfolio represents my journey in AI, Web Development, and Software Engineering.  
 It highlights my projects, skills, achievements, and provides ways to connect with me.
 
-The design is inspired by space-themed UI, combining:
+---
 
-3D visuals
-Smooth animations
-Glassmorphism effects
-Clean engineering structure
-✨ Features
-⚡ Fully responsive design (mobile + desktop)
-🎨 Modern UI with glassmorphism & gradients
-🧠 AI/ML focused personal branding
-🎥 Smooth scroll + reveal animations
-🧩 Interactive 3D tilt cards
-📊 Project showcase with links
-📄 Resume download option
-📱 Mobile navigation with toggle menu
-🔗 Social links integration
-🛠️ Tech Stack
-Frontend
-HTML5
-CSS3 (Advanced animations & responsiveness)
-JavaScript (Vanilla JS)
-Libraries & Tools
-Font Awesome (icons)
-Google Fonts (Chakra Petch, Manrope)
-📂 Project Structure
-📁 Portfolio
-├── index.html        # Main HTML file
-├── style.css         # Main styling (UI + animations)
-├── script.js         # Interactivity & animations
-├── assets/           # Images, resume, profile
-├── images/           # Project screenshots
-🚀 Featured Projects
-🔹 VS Code Error Sound Extension
-Plays sound alerts for terminal errors
-Improves developer workflow awareness
-Tech: JavaScript, VS Code API, Node.js
-🔹 Face Recognition Attendance System
-Real-time attendance using face recognition
-Anti-spoofing + geo-fencing security
-Tech: Python, OpenCV, Pandas
-🔹 Habit Tracker Web App
-Tracks habits with streaks & dashboard
-Firebase authentication + database
-Tech: HTML, CSS, JS, Firebase
-🧠 Skills Highlighted
-AI / Machine Learning
-Web Development
-Data Structures & Algorithms
-APIs & System Design
-NLP, RAG, Fine-tuning
-Deployment & Optimization
-📈 Achievements
-💼 Front-End Intern at SpikeTech (2025)
-🤖 Built AI-based secure systems
-📚 Continuous learning in AI + Full Stack
-📬 Contact
-📧 Email: amansinghakr@gmail.com
-💻 GitHub: https://github.com/amnsingh05
-🔗 LinkedIn: https://linkedin.com/in/amnsingh0
-🌍 All Links: https://linktr.ee/amnsingh
-🛠️ How to Run Locally
-# Clone the repo
+## ✨ Features
+
+- Fully responsive design
+- Modern UI with animations
+- Interactive 3D tilt effects
+- Smooth scrolling & reveal animations
+- Project showcase
+- Resume download
+- Social links integration
+
+---
+
+## 🛠️ Tech Stack
+
+- HTML5  
+- CSS3  
+- JavaScript  
+- Font Awesome  
+- Google Fonts  
+
+---
+
+## 📂 Project Structure
+
+Portfolio/
+│── index.html
+│── style.css
+│── script.js
+│── assets/
+│── images/
+
+---
+
+## 🚀 Featured Projects
+
+### VS Code Error Sound Extension
+- Alerts on terminal errors  
+- Tech: JavaScript, Node.js  
+
+### Face Recognition Attendance System
+- AI-based attendance system  
+- Tech: Python, OpenCV  
+
+### Habit Tracker Web App
+- Tracks habits with Firebase  
+- Tech: HTML, CSS, JS  
+
+---
+
+## 📬 Contact
+
+- Email: amansinghakr@gmail.com  
+- GitHub: https://github.com/amnsingh05  
+- LinkedIn: https://linkedin.com/in/amnsingh0  
+
+---
+
+## 🛠️ Run Locally
+
 git clone https://github.com/amnsingh05/my_Portfolio.git
-
-# Open folder
 cd my_Portfolio
-
-# Run locally
 Open index.html in browser
-🎯 Future Improvements
-Add backend (contact form)
-Add blog section
-Improve SEO optimization
-Add more AI projects
-Integrate analytics
-⭐ Support
 
-If you like this project:
+---
 
-⭐ Star this repo
-🍴 Fork it
-🔗 Share with others
-📜 License
+## ⭐ Support
 
-This project is open-source and available under the MIT License.
+If you like this project, give it a star ⭐
