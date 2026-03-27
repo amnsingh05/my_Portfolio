@@ -1,283 +1,433 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Aman Singh | AI/ML Engineer & Developer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aman Singh - AI/ML Engineer & Full-Stack Developer Portfolio showcasing projects, skills and achievements.">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aman Singh | AI/ML Engineer & Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Aman Singh portfolio showcasing AI/ML and full-stack projects, skills, achievements, and professional links."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Manrope:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="bg-layer bg-stars" aria-hidden="true"></div>
+    <div class="bg-layer bg-grid" aria-hidden="true"></div>
+    <div class="bg-layer bg-glow" aria-hidden="true"></div>
+    <div class="bg-layer bg-twinkle" aria-hidden="true"></div>
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="style.css">
+    <header class="site-header">
+      <nav class="navbar">
+        <a class="brand" href="#home">
+          <span class="brand-mark">AS</span>
+          <span class="brand-text">Aman Singh</span>
+        </a>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<body>
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-<!-- ================= NAVBAR ================= -->
-<nav class="navbar">
-    <ul class="nav-left">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Technologies</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+        <ul id="nav-links" class="nav-links">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Technologies</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#achievements" class="nav-link">Achievements</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
 
-    <div class="nav-right">
-        <a href="https://github.com/amnsingh05" target="_blank" class="icon" aria-label="GitHub">
+        <div class="socials" aria-label="Social links">
+          <a
+            href="https://github.com/amnsingh05"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open GitHub profile"
+          >
             <i class="fab fa-github"></i>
-        </a>
-        <a href="https://linkedin.com/in/amnsingh0" target="_blank" class="icon" aria-label="LinkedIn">
+          </a>
+          <a
+            href="https://linkedin.com/in/amnsingh0"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open LinkedIn profile"
+          >
             <i class="fab fa-linkedin"></i>
-        </a>
-        <a href="https://linktr.ee/amnsingh" target="_blank" class="icon" aria-label="All Links">
+          </a>
+          <a
+            href="https://linktr.ee/amnsingh"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open link collection"
+          >
             <i class="fas fa-link"></i>
-        </a>
-    </div>
-</nav>
+          </a>
+        </div>
+      </nav>
+    </header>
 
-<!-- ================= HERO ================= -->
-<section id="home" class="hero">
-    <div class="hero-content">
+    <main>
+      <section id="home" class="section hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">AI/ML Engineer + Full-Stack Developer</p>
+          <h1>Building intelligent, space-inspired digital experiences with clean engineering.</h1>
+          <p class="hero-description">
+            I am Aman Singh, an aspiring AI/ML Engineer and Software Developer focused on
+            secure systems, scalable web applications, and thoughtful user experiences that
+            feel modern, interactive, and professional.
+          </p>
 
-        <div class="text hidden">
-            <h3>Hello There 👋</h3>
-            <h1>I am <span>Aman Singh</span></h1>
-            <p>Aspiring AI/ML Engineer & Full-Stack Developer</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-solid">
+              <i class="fas fa-rocket"></i>
+              <span>View Projects</span>
+            </a>
+            <a
+              href="assets/Aman_Singh_Resume.pdf"
+              download="Aman_Singh_Resume.pdf"
+              class="btn btn-outline btn-download"
+            >
+              <i class="fas fa-file-arrow-down"></i>
+              <span>Download Resume</span>
+            </a>
+          </div>
 
-            <div class="buttons">
-                <a href="#projects" class="btn">View My Projects</a>
-                <a href="assets/Resume.pdf" download="Aman_Singh_Resume.pdf" class="btn-outline">
-                    Download Resume
-                </a>
+          <p class="resume-note">
+            Professional PDF resume download with summary, skills, experience, and project
+            highlights.
+          </p>
+
+          <div class="hero-links" aria-label="Primary external links">
+            <a
+              class="hero-link"
+              href="https://github.com/amnsingh05"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+            <a
+              class="hero-link"
+              href="https://linkedin.com/in/amnsingh0"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fab fa-linkedin"></i>
+              <span>LinkedIn</span>
+            </a>
+            <a
+              class="hero-link"
+              href="https://linktr.ee/amnsingh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <i class="fas fa-link"></i>
+              <span>All Links</span>
+            </a>
+          </div>
+
+          <div class="hero-metrics">
+            <article class="metric glass-mini">
+              <strong>3+</strong>
+              <span>Featured Projects</span>
+            </article>
+            <article class="metric glass-mini">
+              <strong>AI + Web</strong>
+              <span>Core Focus Areas</span>
+            </article>
+            <article class="metric glass-mini">
+              <strong>2025</strong>
+              <span>Internship Milestone</span>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal">
+          <div class="cosmos-frame tilt-card">
+            <div class="frame-ring ring-one"></div>
+            <div class="frame-ring ring-two"></div>
+
+            <div class="planet planet-a"></div>
+            <div class="planet planet-b"></div>
+            <div class="planet planet-c"></div>
+
+            <span class="spark spark-a"></span>
+            <span class="spark spark-b"></span>
+            <span class="spark spark-c"></span>
+            <span class="spark spark-d"></span>
+            <span class="spark spark-e"></span>
+            <span class="spark spark-f"></span>
+
+            <div class="scene-wrap" aria-hidden="true">
+              <div class="orbit orbit-a"></div>
+              <div class="orbit orbit-b"></div>
+              <div class="cube-scene">
+                <div class="cube">
+                  <div class="face front">AI</div>
+                  <div class="face back">ML</div>
+                  <div class="face right">WEB</div>
+                  <div class="face left">API</div>
+                  <div class="face top">DATA</div>
+                  <div class="face bottom">CLOUD</div>
+                </div>
+              </div>
             </div>
-        </div>
 
-        <div class="profile hidden">
-            <img src="assets/profile.jpg" alt="Aman Singh Profile Photo" loading="lazy">
-        </div>
-
-    </div>
-</section>
-
-<!-- ================= ABOUT ================= -->
-<section id="about" class="about-section hidden">
-    <h2 class="section-title">ABOUT ME</h2>
-
-    <p class="about-text">
-        I am an aspiring AI/ML Engineer and Software Developer with strong 
-        foundations in C++, Data Structures & Algorithms, Web Development,
-        and System Design. I enjoy building secure, intelligent systems 
-        and real-world applications that solve meaningful problems.
-    </p>
-</section>
-
-<!-- ================= TECHNOLOGIES ================= -->
-<section id="skills" class="skills-section hidden">
-    <h2 class="section-title">TECHNOLOGIES</h2>
-
-    <p class="skills-subtext">
-        Tools and technologies I use to build scalable and intelligent systems.
-    </p>
-
-    <div class="skills-grid">
-        <div class="skill-item hidden"><i class="fab fa-html5"></i><p>HTML</p></div>
-        <div class="skill-item hidden"><i class="fab fa-css3-alt"></i><p>CSS</p></div>
-        <div class="skill-item hidden"><i class="fab fa-js"></i><p>JavaScript</p></div>
-        <div class="skill-item hidden"><i class="fab fa-python"></i><p>Python</p></div>
-        <div class="skill-item hidden"><i class="fas fa-code"></i><p>C++</p></div>
-        <div class="skill-item hidden"><i class="fas fa-terminal"></i><p>C Programming</p></div>
-        <div class="skill-item hidden"><i class="fas fa-chart-line"></i><p>Streamlit</p></div>
-        <div class="skill-item hidden"><i class="fas fa-database"></i><p>MySQL</p></div>
-        <div class="skill-item hidden"><i class="fas fa-cube"></i><p>3D Printing</p></div>
-        <div class="skill-item hidden"><i class="fas fa-pen-nib"></i><p>Figma</p></div>
-        <div class="skill-item hidden"><i class="fas fa-palette"></i><p>Canva</p></div>
-    </div>
-</section>
-
-<!-- ================= PROJECTS ================= -->
-<section id="projects" class="projects-section hidden">
-    <h2 class="section-title">MY PROJECTS</h2>
-
-    <!-- ===== Project 1 ===== -->
-    <div class="project-wrapper hidden">
-        <div class="project-image">
-            <img src="images/VS Code Error Sound Extension.png" alt="VS Code Error Sound Extension Screenshot" loading="lazy">
-        </div>
-
-        <div class="project-content">
-            <h3>VS Code Error Sound Extension</h3>
-            <p>
-                A productivity-focused VS Code extension that plays sound alerts 
-                when errors occur, improving debugging awareness and workflow efficiency.
-            </p>
-
-            <p class="tech-stack">
-                <strong>Tech Stack:</strong> JavaScript · VS Code API · Node.js
-            </p>
-
-            <div class="project-buttons">
-                <a href="https://github.com/amnsingh05/terminal_error_sound.git" target="_blank" class="repo-btn">
-                    <i class="fab fa-github"></i> Repository
-                </a>
-
-                <a href="https://marketplace.visualstudio.com/items?itemName=amnsinghdev.amnsingh27-terminal-error-sound"
-                   target="_blank" class="live-btn">
-                    <i class="fas fa-external-link-alt"></i> View Project
-                </a>
+            <div class="profile-shell">
+              <img src="images/profile.jpg" alt="Aman Singh profile photo" loading="lazy" />
             </div>
+
+            <div class="floating-tag tag-one">Open to internships</div>
+            <div class="floating-tag tag-two">Responsive 3D portfolio</div>
+          </div>
         </div>
-    </div>
+      </section>
 
-    <!-- ===== Project 2 ===== -->
-    <div class="project-wrapper reverse hidden">
-        <div class="project-image">
-            <img src="images/face_recognition_attendance_system.png" alt="Face Recognition Attendance System Screenshot" loading="lazy">
+      <section id="about" class="section reveal">
+        <div class="section-head">
+          <p class="section-tag">Who I Am</p>
+          <h2>About Me</h2>
         </div>
+        <div class="glass-panel">
+          <p>
+            I am an aspiring AI/ML Engineer and Software Developer with strong foundations in
+            C++, Data Structures and Algorithms, Web Development, and System Design. I enjoy
+            building secure, intelligent products that solve real-world problems with practical
+            impact and polished user experience.
+          </p>
+        </div>
+      </section>
 
-        <div class="project-content">
-            <h3>🎯 Face Recognition Attendance System</h3>
-            <p>
-                A secure attendance system integrating real-time face recognition,
-                liveness detection (anti-spoofing), and geo-fencing validation
-                to prevent fraudulent attendance marking.
-            </p>
+      <section id="skills" class="section reveal">
+        <div class="section-head">
+          <p class="section-tag">What I Use</p>
+          <h2>Technologies</h2>
+        </div>
+        <p class="section-subtext">
+          Tools and technologies I use to design, develop, and deploy scalable solutions.
+        </p>
+        <div class="skills-grid">
+          <article class="skill-card tilt-card"><i class="fab fa-html5"></i><p>HTML</p></article>
+          <article class="skill-card tilt-card"><i class="fab fa-css3-alt"></i><p>CSS</p></article>
+          <article class="skill-card tilt-card"><i class="fab fa-js"></i><p>JavaScript</p></article>
+          <article class="skill-card tilt-card"><i class="fab fa-python"></i><p>Python</p></article>
+          <article class="skill-card tilt-card"><i class="fas fa-code"></i><p>C++</p></article>
+          <article class="skill-card tilt-card"><i class="fas fa-terminal"></i><p>C</p></article>
+          <article class="skill-card tilt-card"><i class="fas fa-chart-line"></i><p>Streamlit</p></article>
+          <article class="skill-card tilt-card"><i class="fas fa-database"></i><p>MySQL</p></article>
+          <article class="skill-card tilt-card"><i class="fas fa-cube"></i><p>3D Printing</p></article>
+          <article class="skill-card tilt-card"><i class="fas fa-pen-nib"></i><p>Figma</p></article>
+          <article class="skill-card tilt-card"><i class="fas fa-palette"></i><p>Canva</p></article>
+        </div>
+      </section>
 
-            <p class="tech-stack">
-                <strong>Tech Stack:</strong> Python · OpenCV · CVZone · Geopy · Pandas · Tkinter
-            </p>
-
-            <div class="project-buttons">
-                <a href="https://github.com/amnsingh05/face-recognition-attendance-system.git"
-                   target="_blank" class="repo-btn">
-                    <i class="fab fa-github"></i> Repository
-                </a>
+      <section id="projects" class="section reveal">
+        <div class="section-head">
+          <p class="section-tag">What I Built</p>
+          <h2>Featured Projects</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project-card tilt-card">
+            <div class="project-image">
+              <img
+                src="images/VS Code Error Sound Extension.png"
+                alt="VS Code Error Sound Extension screenshot"
+                loading="lazy"
+              />
             </div>
-        </div>
-    </div>
-
-    <!-- ===== Project 3 ===== -->
-    <div class="project-wrapper hidden">
-        <div class="project-image">
-            <img src="images/habit_tracker_web_app.png" alt="Habit Tracker Web Application Screenshot" loading="lazy">
-        </div>
-
-        <div class="project-content">
-            <h3>📊 Habit Tracker Web Application</h3>
-
-            <p>
-                A cloud-based habit tracking system built using HTML, CSS, and JavaScript
-                with secure Firebase Authentication and real-time cloud storage via Firestore.
-            </p>
-
-            <p>
-                It allows users to track daily habits, maintain streaks, manage tasks,
-                and monitor productivity through an interactive dashboard.
-                Currently developed for personal productivity usage.
-            </p>
-
-            <p class="tech-stack">
-                <strong>Tech Stack:</strong>
-                HTML · CSS · JavaScript · Firebase Authentication · Firebase Firestore
-            </p>
-
-            <p>
-                🚀 <strong>Planned Enhancements:</strong>
-                Weekly tracking view, analytics graphs, performance insights,
-                advanced task tracking, and progress visualization.
-            </p>
-
-            <div class="project-buttons">
-                <a href="https://github.com/amnsingh05/habit_tracker.git"
-                   target="_blank" class="repo-btn">
-                    <i class="fab fa-github"></i> Repository
+            <div class="project-content">
+              <h3>VS Code Error Sound Extension</h3>
+              <p>
+                A productivity-focused VS Code extension that plays alerts when terminal errors
+                occur, improving debugging awareness and developer workflow efficiency.
+              </p>
+              <p class="stack">JavaScript &middot; VS Code API &middot; Node.js</p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/amnsingh05/terminal_error_sound.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i>
+                  <span>Repository</span>
                 </a>
-
-                <a href="https://amnsingh05.github.io/habit_tracker/"
-                   target="_blank" class="live-btn">
-                    <i class="fas fa-external-link-alt"></i> Live Demo
+                <a
+                  href="https://marketplace.visualstudio.com/items?itemName=amnsinghdev.amnsingh27-terminal-error-sound"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-arrow-up-right-from-square"></i>
+                  <span>View Project</span>
                 </a>
+              </div>
             </div>
+          </article>
+
+          <article class="project-card tilt-card">
+            <div class="project-image">
+              <img
+                src="images/face_recognition_attendance_system.png"
+                alt="Face Recognition Attendance System screenshot"
+                loading="lazy"
+              />
+            </div>
+            <div class="project-content">
+              <h3>Face Recognition Attendance System</h3>
+              <p>
+                Intelligent attendance platform with real-time face recognition, anti-spoofing,
+                and geo-fencing validation for secure and fraud-resistant attendance marking.
+              </p>
+              <p class="stack">Python &middot; OpenCV &middot; CVZone &middot; Geopy &middot; Pandas &middot; Tkinter</p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/amnsingh05/face-recognition-attendance-system.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i>
+                  <span>Repository</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card tilt-card">
+            <div class="project-image">
+              <img
+                src="images/habit_tracker_web_app.png"
+                alt="Habit Tracker Web Application screenshot"
+                loading="lazy"
+              />
+            </div>
+            <div class="project-content">
+              <h3>Habit Tracker Web Application</h3>
+              <p>
+                Cloud-based productivity app using Firebase Authentication and Firestore for
+                secure real-time habit tracking, streaks, and dashboard-based progress.
+              </p>
+              <p class="stack">HTML &middot; CSS &middot; JavaScript &middot; Firebase Auth &middot; Firestore</p>
+              <div class="project-actions">
+                <a
+                  href="https://github.com/amnsingh05/habit_tracker.git"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-github"></i>
+                  <span>Repository</span>
+                </a>
+                <a
+                  href="https://amnsingh05.github.io/habit_tracker/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fas fa-arrow-up-right-from-square"></i>
+                  <span>Live Demo</span>
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
-    </div>
+      </section>
 
-</section>
+      <section id="achievements" class="section reveal">
+        <div class="section-head">
+          <p class="section-tag">Milestones</p>
+          <h2>Achievements & Certifications</h2>
+        </div>
+        <div class="achievement-grid">
+          <article class="info-card tilt-card">
+            <h3>Achievements</h3>
+            <ul>
+              <li>Front-End Development Intern at SpikeTech (September 2025)</li>
+              <li>Built secure AI-based attendance workflows with anti-spoofing validation</li>
+            </ul>
+          </article>
+          <article class="info-card tilt-card">
+            <h3>Certifications</h3>
+            <ul>
+              <li>Python Programming certification entry ready for your final platform name</li>
+              <li>Continuing focused study in AI systems and full-stack engineering</li>
+            </ul>
+          </article>
+        </div>
+      </section>
 
-<!-- ================= ACHIEVEMENTS ================= -->
-<section id="achievements" class="hidden">
-    <h2 class="section-title">ACHIEVEMENTS & CERTIFICATIONS</h2>
-
-    <div class="card hidden">
-        <h3>Achievements</h3>
-        <ul>
-            <li>Front-End Development Intern at SpikeTech (September 2025)</li>
-        </ul>
-    </div>
-
-    <div class="card hidden">
-        <h3>Certifications</h3>
-        <ul>
-            <li>Python Programming – (Add Platform Name)</li>
-        </ul>
-    </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact" class="contact-section hidden">
-    <h2 class="section-title">LET'S CONNECT</h2>
-
-    <p class="contact-subtext">
-        Open to internships, collaborations, and exciting tech opportunities.
-    </p>
-
-    <div class="contact-container">
-        <a href="mailto:amansinghakr@gmail.com" class="contact-card">
+      <section id="contact" class="section reveal">
+        <div class="section-head">
+          <p class="section-tag">Get In Touch</p>
+          <h2>Let's Connect</h2>
+        </div>
+        <p class="section-subtext">
+          Open to internships, collaborations, and exciting opportunities in AI/ML or software
+          development.
+        </p>
+        <div class="contact-grid">
+          <a class="contact-card tilt-card" href="mailto:amansinghakr@gmail.com">
             <i class="fas fa-envelope"></i>
             <h3>Email</h3>
             <p>amansinghakr@gmail.com</p>
-        </a>
-
-        <a href="https://github.com/amnsingh05" target="_blank" class="contact-card">
+            <span class="contact-open">Send Email</span>
+          </a>
+          <a
+            class="contact-card tilt-card"
+            href="https://github.com/amnsingh05"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="fab fa-github"></i>
             <h3>GitHub</h3>
             <p>github.com/amnsingh05</p>
-        </a>
-
-        <a href="https://linkedin.com/in/amnsingh0" target="_blank" class="contact-card">
+            <span class="contact-open">Open Profile</span>
+          </a>
+          <a
+            class="contact-card tilt-card"
+            href="https://linkedin.com/in/amnsingh0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="fab fa-linkedin"></i>
             <h3>LinkedIn</h3>
             <p>linkedin.com/in/amnsingh0</p>
-        </a>
-
-        <a href="https://linktr.ee/amnsingh" target="_blank" class="contact-card">
+            <span class="contact-open">Open Profile</span>
+          </a>
+          <a
+            class="contact-card tilt-card"
+            href="https://linktr.ee/amnsingh"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i class="fas fa-link"></i>
             <h3>All Links</h3>
             <p>linktr.ee/amnsingh</p>
-        </a>
-    </div>
-</section>
+            <span class="contact-open">Open Links</span>
+          </a>
+        </div>
+      </section>
+    </main>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-    © 2026 Aman Singh | Designed & Built with Consistency 🚀
-</footer>
+    <footer>
+      <p>&copy; 2026 Aman Singh | Built with consistency, curiosity, and strong execution.</p>
+    </footer>
 
-<!-- ================= SCROLL ANIMATION ================= -->
-<script>
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add("show");
-        } else {
-            entry.target.classList.remove("show");
-        }
-    });
-}, { threshold: 0.15 });
-
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
-</script>
-
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>

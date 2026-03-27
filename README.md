@@ -1,196 +1,39 @@
-# 👨‍💻 Aman Singh — Portfolio Website
+# Snake (Classic)
 
-Welcome to my personal developer portfolio website 🚀  
-This portfolio showcases my projects, technical skills, and achievements as an aspiring AI/ML Engineer and Software Developer.
+Small vanilla JavaScript Snake game with:
 
----
+- Grid movement
+- Food spawning
+- Snake growth
+- Score tracking
+- Game-over detection
+- Restart and pause
+- Speed levels (Easy / Medium / Hard)
 
-## 🌐 Live Website
+## Run
 
-🔗 [Visit Portfolio](https://amnsingh05.github.io/my_Portfolio/)
+From the repo root:
 
----
-
-## 📖 About Me
-
-I am an aspiring AI/ML Engineer and Software Developer with strong foundations in:
-
-- C++
-- Data Structures & Algorithms
-- Web Development
-- System Design
-- AI-based Applications
-
-I enjoy building secure, intelligent systems and solving real-world problems through technology.
-
----
-
-## 🛠️ Technologies Used
-
-### 💻 Frontend
-- HTML5
-- CSS3
-- JavaScript
-
-### 🧠 Backend / Programming
-- Python
-- C++
-- C
-
-### 📊 Tools & Platforms
-- Firebase Authentication
-- Firebase Firestore
-- Streamlit
-- MySQL
-- OpenCV
-- CVZone
-- Geopy
-- Pandas
-- Tkinter
-- Figma
-- Canva
-
----
-
-# 🚀 Featured Projects
-
----
-
-## 1️⃣ VS Code Error Sound Extension
-
-A productivity-focused VS Code extension that plays sound alerts when errors occur, improving debugging awareness and workflow efficiency.
-
-**Tech Stack:**
-- JavaScript
-- VS Code API
-- Node.js
-
-🔗 Repository:  
-https://github.com/amnsingh05/terminal_error_sound
-
-🔗 Marketplace:  
-https://marketplace.visualstudio.com/items?itemName=amnsinghdev.amnsingh27-terminal-error-sound
-
----
-
-## 2️⃣ 🎯 Face Recognition Attendance System
-
-An intelligent attendance management system integrating:
-
-- Real-time Face Recognition
-- Liveness Detection (Anti-Spoofing)
-- Geo-Fencing (Campus Boundary Validation)
-
-Ensures secure and automated attendance marking.
-
-**Tech Stack:**
-- Python
-- OpenCV
-- CVZone
-- Geopy
-- Pandas
-- Tkinter
-
-🔗 Repository:  
-https://github.com/amnsingh05/face-recognition-attendance-system
-
----
-
-## 3️⃣ 📊 Habit Tracker Web Application
-
-A cloud-based Habit Tracker built using:
-
-- HTML
-- CSS
-- JavaScript
-- Firebase Authentication
-- Firebase Firestore
-
-### Features:
-- Secure Login System
-- Cloud Data Storage
-- Habit Streak Tracking
-- Productivity Dashboard
-
-Currently built for personal productivity use.
-
-### 🚀 Planned Enhancements:
-- Weekly tracking view
-- Analytics & performance graphs
-- Advanced task management
-- Progress visualization system
-
-🔗 Repository:  
-https://github.com/amnsingh05/habit_tracker
-
-🔗 Live Demo:  
-https://amnsingh05.github.io/habit_tracker/
-
----
-
-# 📂 Project Structure
-
-```
-portfolio/
-│
-├── index.html
-├── style.css
-├── profile.jpg
-├── resume.pdf
-├── images/
-│   ├── VS Code Error Sound Extension.png
-│   ├── face_recognition_attendance_system.png
-│   └── habit_tracker_web_app.png
+```powershell
+python -m http.server 8000
 ```
 
----
+Then open `http://localhost:8000` in your browser.
 
-# 🎯 Features of Portfolio
+## Controls
 
-- Modern animated gradient background
-- Scroll reveal animations
-- Responsive design (Mobile Friendly)
-- Project showcase layout
-- Professional contact section
-- Resume download functionality
+- Arrow keys or `W/A/S/D` to move
+- `Space` to pause/resume
+- `R` to restart
+- Speed dropdown to switch between Easy, Medium, and Hard
+- On-screen buttons for touch/click input
 
----
+## Manual verification checklist
 
-# 📬 Contact Me
-
-📧 Email: amansinghakr@gmail.com  
-💼 LinkedIn: https://linkedin.com/in/amnsingh0  
-🐙 GitHub: https://github.com/amnsingh05  
-🔗 All Links: https://linktr.ee/amnsingh  
-
----
-
-# 🏆 Achievements
-
-- Front-End Development Intern at SpikeTech (September 2025)
-- Built secure AI-based attendance system
-- Strong foundation in C++, DSA & System Design
-
----
-
-# 📌 Future Improvements
-
-- Dark / Light mode toggle
-- Animated typing effect
-- Blog section
-- Project filtering system
-- Backend integration
-
----
-
-# ⭐ Support
-
-If you like this portfolio, feel free to:
-
-- ⭐ Star the repository
-- 🍴 Fork it
-- 💬 Connect with me
-
----
-
-### © 2026 Aman Singh | Built with passion & consistency 🚀
+- Movement: snake moves one cell per tick and turns correctly.
+- Opposite direction guard: immediate 180-degree turn is ignored.
+- Food and growth: eating food increases length and score by 1.
+- Boundaries: hitting outer wall ends the game.
+- Self-collision: running into snake body ends the game.
+- Pause/restart: pause freezes movement; restart resets score and position.
+- Speed levels: changing Easy/Medium/Hard updates snake tick speed immediately.
