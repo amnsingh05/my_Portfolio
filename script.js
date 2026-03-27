@@ -95,3 +95,20 @@ if (motionAllowed) {
     });
   });
 }
+
+const marqueeTracks = document.querySelectorAll(".ribbon-track, .awards-track");
+
+marqueeTracks.forEach((track) => {
+  const parent = track.parentElement;
+  if (!parent) {
+    return;
+  }
+
+  parent.addEventListener("mouseenter", () => {
+    track.style.animationPlayState = "paused";
+  });
+
+  parent.addEventListener("mouseleave", () => {
+    track.style.animationPlayState = "running";
+  });
+});
