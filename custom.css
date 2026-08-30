@@ -1,10 +1,15 @@
 /* Selected work: scroll-driven stacked project cards. */
+html,body{overflow-x:hidden}
 .stack-projects{position:relative;height:360vh;margin-top:0;border:0}.stack-stage{position:sticky;top:12vh;height:76vh}.stack-card{position:absolute;inset:0;display:grid;grid-template-columns:42% 58%;gap:0;padding:0;overflow:hidden;border:1px solid #2b2b28;background:#151513;will-change:transform,opacity;transform:translate3d(0,110%,0)}.stack-card .project-meta{position:absolute;z-index:1;top:34px;left:34px;color:#eaeae5}.stack-card .project-meta p{color:#a9a9a1}.stack-card .project-copy{grid-column:1;align-self:end;padding:34px;color:#f2f2ec}.stack-card .project-copy h3{max-width:10ch;font-size:clamp(2rem,3vw,3.5rem)}.stack-card .project-copy p{color:#b9b9b2}.stack-card .project-copy small{color:#d8d8cf}.stack-card .project-copy a{margin-top:25px;padding:10px 13px;border:1px solid #494943;border-radius:999px;color:#f2f2ec;font-size:10px;letter-spacing:.05em;text-transform:uppercase;transition:background .2s ease,border-color .2s ease}.stack-card .project-copy a:hover{border-color:#f2f2ec;background:#292925}.stack-card .project-image{grid-column:2;grid-row:1;width:100%;height:100%;margin:0;border:0;border-radius:0;background:#ddd;box-shadow:none}.stack-card .project-image img{transform:scale(1.025);filter:saturate(.78);will-change:transform}.stack-card:first-child{transform:translate3d(0,0,0)}
 
-/* Landing hero composition — photo centered above the name; the name
-   is always rendered in normal flow below it, so it is never covered. */
-.hero{min-height:calc(100vh - 72px);padding:0 0 34px;justify-content:space-between;overflow:hidden}
-.hero-stage{min-height:0;height:auto;margin-top:clamp(56px,8vh,100px);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:clamp(20px,3.5vh,34px)}
+/* ============================================================
+   HERO — big centered name on top, a large portrait beneath it
+   (50% width, 25% breathing room either side, tall vertical
+   crop) that overlaps slightly into the name for depth, then
+   copy + social links pinned along the bottom edge.
+   ============================================================ */
+.hero{position:relative;min-height:calc(100vh - 72px);padding:0 0 34px;justify-content:space-between;overflow:hidden}
+.hero-stage{position:relative;min-height:0;height:auto;margin-top:clamp(40px,6vh,72px);display:flex;flex-direction:column;align-items:center}
 .hero-bottom{align-items:flex-end;margin-top:auto}
 .hero-copy{position:relative;z-index:5;width:min(300px,100%)}
 .hero-copy .eyebrow{margin-bottom:8px}
@@ -16,37 +21,79 @@
 .hero-links{position:relative;z-index:5;display:grid;gap:9px}
 .hero-links a{display:inline-flex;align-items:center;gap:8px;min-width:164px;padding:11px 15px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.76);color:var(--ink);font-size:11px;transition:border-color .25s ease,transform .25s cubic-bezier(.22,1,.36,1),box-shadow .25s ease}
 .hero-links a::after{content:none}
-.hero-links a:hover{color:var(--ink);border-color:var(--ink);transform:translateX(4px);box-shadow:0 8px 18px rgba(17,17,15,.08)}
+.hero-links a:hover{color:var(--ink);border-color:var(--ink);transform:translateY(-4px);box-shadow:0 8px 18px rgba(17,17,15,.08)}
 .hero-links i{width:14px;text-align:center}
 
-/* Portrait — centered, soft breathing frame behind it, and a
-   grayscale-to-colour reveal with a gentle lift on hover. */
-.hero-photo{position:relative;top:auto;right:auto;width:clamp(170px,18vw,240px);aspect-ratio:3/4;height:auto;margin:0 auto;overflow:visible;transform:none;border:0;border-radius:14px;box-shadow:none;background:none}
-.hero-photo::before{content:"";position:absolute;z-index:0;inset:12px -12px -12px 12px;border-radius:14px;background:var(--green);opacity:.15;animation:frameBreathe 6s ease-in-out infinite}
-.hero-photo::after{content:"";position:absolute;z-index:1;inset:0;border-radius:14px;border:1px solid var(--line);pointer-events:none}
-.hero-photo .portrait-main{position:relative;z-index:2;display:block;width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:14px;box-shadow:0 22px 44px rgba(17,17,15,.16);filter:grayscale(.85) contrast(1.03);transform:scale(1);transition:filter .5s ease,transform .5s cubic-bezier(.22,1,.36,1),box-shadow .5s ease}
-.hero-photo:hover .portrait-main{filter:grayscale(0) contrast(1.03);transform:scale(1.03);box-shadow:0 28px 56px rgba(17,17,15,.22)}
-@keyframes frameBreathe{0%,100%{transform:translate(0,0)}50%{transform:translate(-4px,4px)}}
+/* Portrait — medium-width, centered under the name, tall enough
+   to read as the page's focal point. No frame or shadow, so it
+   reads like a natural cutout; it fades softly into the page at
+   its base and sits just behind the name for depth. */
+.hero-photo{position:relative;z-index:0;width:56%;max-width:640px;min-width:220px;height:clamp(440px,74vh,780px);margin:clamp(-40px,-4vh,-16px) auto 0;overflow:visible;border:0;border-radius:0;box-shadow:none;background:none;--shift-x:9%;transform:translateX(var(--shift-x));animation:heroFloat 6.5s ease-in-out infinite;--spot-x:-9999px;--spot-y:-9999px;--spot-size:75px;cursor:none;-webkit-mask-image:linear-gradient(to bottom,#000 86%,transparent 100%);mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)}
+.hero-photo .portrait-main{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;object-position:center center;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.hero-photo .img-grey{filter:grayscale(1) contrast(1.04)}
+.hero-photo:hover .img-grey{filter:grayscale(1) contrast(1.04)}
+.hero-photo .img-color{filter:contrast(1.02);-webkit-mask-image:radial-gradient(circle var(--spot-size) at var(--spot-x) var(--spot-y),#000 0%,#000 65%,transparent 100%);mask-image:radial-gradient(circle var(--spot-size) at var(--spot-x) var(--spot-y),#000 0%,#000 65%,transparent 100%);will-change:mask-position,-webkit-mask-position}
+.hero-photo:hover .portrait-main{transform:scale(1.015)}
+.hero-photo-ring{position:absolute;z-index:2;left:var(--spot-x);top:var(--spot-y);width:calc(var(--spot-size) * 2);height:calc(var(--spot-size) * 2);margin:calc(var(--spot-size) * -1) 0 0 calc(var(--spot-size) * -1);border:1px solid rgba(17,17,15,.35);border-radius:50%;pointer-events:none;opacity:0;transition:opacity .2s ease}
+.hero-photo:hover .hero-photo-ring{opacity:1}
+@keyframes heroFloat{0%,100%{transform:translateX(var(--shift-x)) translateY(0)}50%{transform:translateX(var(--shift-x)) translateY(-16px)}}
 
-/* Name typography — centered, one line, always rendered above the
-   portrait in normal document flow so it is fully visible. */
+/* Richer scroll reveal: fade + slide (from style.css) now paired with
+   a gentle scale-in, and replays every time an element crosses the
+   viewport in either scroll direction (see script.js). */
+.reveal{transform:translateY(26px) scale(.97)}
+.reveal.is-visible{transform:none}
+@media(max-width:760px){.reveal{transform:translateY(16px) scale(.98)}}
+@media(prefers-reduced-motion:reduce){.reveal,.reveal.is-visible{transform:none!important}}
+
+/* ============================================================
+   NEW: Skills stack — each pill is clickable. A quick bounce +
+   an expanding ripple burst from the exact click point, plus a
+   toggled "selected" fill state that stays until clicked again.
+   ============================================================ */
+.stack span{position:relative;display:inline-block;overflow:hidden;cursor:pointer;-webkit-tap-highlight-color:transparent;user-select:none;transition:background .3s cubic-bezier(.22,1,.36,1),color .3s ease,border-color .3s ease,box-shadow .3s ease}
+.stack span:hover{border-color:var(--ink)}
+.stack span:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.stack span.is-active{background:var(--ink);border-color:var(--ink);color:#fff;box-shadow:0 8px 18px rgba(17,17,15,.18)}
+.stack span::after{content:"";position:absolute;left:var(--rx,50%);top:var(--ry,50%);width:6px;height:6px;margin:-3px 0 0 -3px;border-radius:50%;background:currentColor;opacity:0;pointer-events:none}
+.stack span.is-rippling::after{animation:skillRipple .6s ease-out}
+.stack span.is-popping{animation:skillPop .45s cubic-bezier(.34,1.56,.64,1)}
+@keyframes skillRipple{0%{opacity:.4;transform:scale(1)}100%{opacity:0;transform:scale(26)}}
+@keyframes skillPop{0%{transform:scale(1)}35%{transform:scale(1.14)}65%{transform:scale(.93)}100%{transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.stack span.is-popping{animation:none}.stack span.is-rippling::after{animation:none;opacity:0}.stack span{transition:background .2s ease,color .2s ease,border-color .2s ease}}
+
+/* Name typography — centered, one line, painted above the
+   portrait (z-index:1 vs 0) so the overlap never hides a letter. */
 .nav-links a{display:inline-flex;align-items:baseline;gap:7px}.nav-links small{color:#c4c3bd;font:500 10px "DM Mono",monospace;letter-spacing:0}
 .hero .hero-name{position:relative;z-index:1;display:flex;align-items:baseline;justify-content:center;width:100%;margin:0;font-family:"Satoshi",sans-serif;font-size:clamp(3.2rem,10vw,9.5rem);font-weight:800;line-height:.84;letter-spacing:-.045em;white-space:nowrap;text-transform:uppercase}
 .hero .hero-name span{display:inline}
 .hero .hero-name .name-outline{color:transparent;-webkit-text-stroke:2px #111;text-shadow:none}
 .hero .hero-name .name-solid{margin-left:.12em;color:#111;font-weight:900}
 
+@media(max-width:1024px){.hero-photo{width:62%;max-width:480px;height:clamp(380px,68vh,620px);--shift-x:7%}.journey-list{margin-left:22%}.about-copy{margin-left:22%}}
+
 @media(max-width:760px){.stack-projects{height:auto;border-top:1px solid var(--line)}.stack-stage{position:static;height:auto}.stack-card{position:relative;display:flex;flex-direction:column;min-height:0;margin:0;border:1px solid #2b2b28;transform:none!important;opacity:1!important}.stack-card+.stack-card{margin-top:18px}.stack-card .project-image{order:1;width:100%;height:auto;aspect-ratio:1.42}.stack-card .project-copy{order:2;padding:24px}.stack-card .project-meta{position:static;order:3;padding:0 24px 24px}.stack-card .project-meta p{display:block;max-width:none;margin:6px 0 0}.stack-card .project-copy h3{font-size:2rem}
 .hero{min-height:auto;padding-bottom:28px}
-.hero-stage{margin-top:44px;gap:22px}
+.hero-stage{margin-top:32px}
 .hero .hero-name{font-size:clamp(2.4rem,13vw,3.6rem);white-space:normal}
-.hero-photo{width:160px}
-.hero-photo::before{inset:9px -9px -9px 9px}
-.hero-bottom{gap:28px}.hero-links{grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.hero-links a{min-width:0}.hero-copy{max-width:290px}.nav-links small{display:none}}
-@media(prefers-reduced-motion:reduce){.stack-projects{height:auto}.stack-stage{position:static;height:auto}.stack-card{position:relative;margin-bottom:18px;transform:none!important;opacity:1!important}.hero-photo,.hero-photo .portrait-main{transition:none}.hero-photo::before{animation:none}}
+.hero-photo{width:78%;max-width:400px;height:clamp(340px,62vh,480px);margin-top:clamp(-20px,-2vh,-8px);--shift-x:6%}.hero-photo-ring{display:none}
+.hero-bottom{gap:24px;flex-direction:column;align-items:stretch;margin-top:20px}
+.hero-links{grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.hero-links a{min-width:0}.hero-copy{max-width:none}.nav-links small{display:none}}
+
+@media(max-width:480px){.hero-photo{width:86%;max-width:320px;height:clamp(300px,58vh,400px);margin-top:clamp(-12px,-1.5vh,-4px);--shift-x:5%}.hero .hero-name{font-size:clamp(2.1rem,14vw,3rem)}
+.case-panel{padding:20px 14px 34px;border-radius:12px}.case-top{margin-bottom:26px}.case-back{padding:9px 13px;font-size:11px}.case-title{margin-bottom:14px;font-size:clamp(1.7rem,7.5vw,2.3rem)}.case-desc{font-size:13px;line-height:1.55}.case-meta{gap:22px;flex-wrap:wrap;margin-bottom:26px}.case-actions{gap:10px;margin-bottom:26px}.case-image{aspect-ratio:1.3}
+.work-card .project-copy{padding:16px 0 0}.work-card .project-copy h3{font-size:1.15rem}
+.work-toolbar{gap:14px}.filter-tab{padding:8px 14px;font-size:11px}
+.journey-list article{padding:18px 0}
+.education-item{padding:16px 0}
+.about-copy{font-size:clamp(1.3rem,6vw,1.8rem)}
+.nav-links.open a{padding:6px 0}}
+@media(max-width:360px){.hero .hero-name{font-size:clamp(1.9rem,15vw,2.6rem)}.hero-photo{width:92%;max-width:280px;--shift-x:4%}}
+
+@media(prefers-reduced-motion:reduce){.stack-projects{height:auto}.stack-stage{position:static;height:auto}.stack-card{position:relative;margin-bottom:18px;transform:none!important;opacity:1!important}.hero-photo{cursor:auto;animation:none;transform:translateX(var(--shift-x))}.hero-photo .portrait-main{transition:none}.hero-photo .img-color{-webkit-mask-image:none;mask-image:none}.hero-photo-ring{display:none}}
 
 /* Page-load and scroll motion. */
-.intro-nav{animation:introDrop .7s cubic-bezier(.22,1,.36,1) both}.intro-name{animation:namePop .9s .12s cubic-bezier(.16,1,.3,1) both}.intro-photo{animation:photoRise .8s .24s cubic-bezier(.16,1,.3,1) both}.intro-copy{animation:copyReveal .75s .55s cubic-bezier(.22,1,.36,1) both}.hero-photo{will-change:transform,opacity}@keyframes introDrop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}@keyframes namePop{0%{opacity:0;transform:translateY(-88px) scale(.92)}70%{opacity:1;transform:translateY(4px) scale(1.01)}100%{opacity:1;transform:none}}@keyframes photoRise{0%{opacity:0;transform:translateY(26px)}100%{opacity:1;transform:translateY(0)}}@keyframes copyReveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.section-heading.is-visible h2{animation:headingLift .7s cubic-bezier(.22,1,.36,1) both}.section-heading.is-visible p{animation:labelFade .55s .08s ease both}.journey-list.is-visible article{animation:rowReveal .55s cubic-bezier(.22,1,.36,1) both}.journey-list.is-visible article:nth-child(2){animation-delay:.07s}.journey-list.is-visible article:nth-child(3){animation-delay:.14s}.journey-list.is-visible article:nth-child(4){animation-delay:.21s}.journey-list.is-visible article:nth-child(5){animation-delay:.28s}.build-list.is-visible a{animation:rowReveal .55s cubic-bezier(.22,1,.36,1) both}.build-list.is-visible a:nth-child(2){animation-delay:.07s}.build-list.is-visible a:nth-child(3){animation-delay:.14s}.build-list.is-visible a:nth-child(4){animation-delay:.21s}@keyframes headingLift{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}@keyframes labelFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes rowReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.intro-nav{animation:introDrop .7s cubic-bezier(.22,1,.36,1) both}.intro-name{animation:namePop .9s .12s cubic-bezier(.16,1,.3,1) both}.intro-photo{animation:photoRise .8s .24s cubic-bezier(.16,1,.3,1) both}.intro-copy{animation:copyReveal .75s .55s cubic-bezier(.22,1,.36,1) both}.hero-photo{will-change:transform,opacity}@keyframes introDrop{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:none}}@keyframes namePop{0%{opacity:0;transform:translateY(-88px) scale(.92)}70%{opacity:1;transform:translateY(4px) scale(1.01)}100%{opacity:1;transform:none}}@keyframes photoRise{0%{opacity:0;transform:translateX(var(--shift-x)) translateY(26px)}100%{opacity:1;transform:translateX(var(--shift-x)) translateY(0)}}@keyframes copyReveal{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}.section-heading.is-visible h2{animation:headingLift .7s cubic-bezier(.22,1,.36,1) both}.section-heading.is-visible p{animation:labelFade .55s .08s ease both}.journey-list.is-visible article{animation:rowReveal .55s cubic-bezier(.22,1,.36,1) both}.journey-list.is-visible article:nth-child(2){animation-delay:.07s}.journey-list.is-visible article:nth-child(3){animation-delay:.14s}.journey-list.is-visible article:nth-child(4){animation-delay:.21s}.journey-list.is-visible article:nth-child(5){animation-delay:.28s}.build-list.is-visible a{animation:rowReveal .55s cubic-bezier(.22,1,.36,1) both}.build-list.is-visible a:nth-child(2){animation-delay:.07s}.build-list.is-visible a:nth-child(3){animation-delay:.14s}.build-list.is-visible a:nth-child(4){animation-delay:.21s}@keyframes headingLift{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}@keyframes labelFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes rowReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.intro-nav,.intro-name,.intro-photo,.intro-copy,.section-heading.is-visible h2,.section-heading.is-visible p,.journey-list.is-visible article,.build-list.is-visible a{animation:none!important}}
 
 /* Compact navigation treatment. */
@@ -81,10 +128,31 @@
    small "/Label" — matches the video's Work/Service/Experience
    section treatment).
    ============================================================ */
-.section-heading.watermark-heading{position:relative;isolation:isolate;overflow:hidden;padding-top:.35em}
-.section-heading.watermark-heading::before{content:attr(data-watermark);position:absolute;z-index:-1;top:-.36em;left:-.02em;font-family:"Satoshi",sans-serif;font-size:clamp(3.2rem,10vw,9rem);font-weight:800;line-height:1;letter-spacing:-.04em;color:rgba(17,17,15,.05);white-space:nowrap;pointer-events:none}
-.section-heading.watermark-heading--dark::before{color:rgba(244,243,239,.06)}
-@media(max-width:760px){.section-heading.watermark-heading::before{font-size:clamp(2.4rem,16vw,4.5rem)}}
+.section-heading.watermark-heading{position:relative;isolation:isolate;overflow:visible;padding-top:.35em}
+.section-heading.watermark-heading::before{content:attr(data-watermark);position:absolute;z-index:-1;top:-.32em;left:-.02em;font-family:"Satoshi",sans-serif;font-size:clamp(3.2rem,11vw,10rem);font-weight:800;line-height:1;letter-spacing:-.04em;color:rgba(17,17,15,.06);white-space:nowrap;pointer-events:none}
+.section-heading.watermark-heading--dark::before{color:rgba(244,243,239,.09)}
+@media(max-width:760px){.section-heading.watermark-heading::before{font-size:clamp(2.4rem,17vw,4.8rem)}}
+
+/* ============================================================
+   NEW: Experience — the base 33.8% left gutter left the dark
+   panel looking mostly empty on the left. Tighten it so the rows
+   (and the watermark behind the heading) use the full box.
+   ============================================================ */
+.journey-list{margin-left:9%}
+@media(max-width:1024px){.journey-list{margin-left:8%}}
+@media(max-width:760px){.journey-list{margin-left:0}}
+
+/* ============================================================
+   NEW: About — open the section up. Wider copy column, roomier
+   line-height and spacing so the text doesn't read as congested,
+   plus a watermark behind the heading to match Work/Experience.
+   ============================================================ */
+.about{padding:130px 0 150px;border-top:1px solid var(--line)}
+.about-copy{max-width:800px;margin:0 0 100px 9%;font-size:clamp(1.55rem,2.9vw,2.75rem);line-height:1.32;letter-spacing:-.04em}
+.skills .stack{margin-left:9%;gap:50px}
+.about-education{margin-left:9%;margin-bottom:70px;display:grid;gap:26px;max-width:700px}
+@media(max-width:1024px){.about-copy,.skills .stack,.about-education{margin-left:22%}.about{padding:100px 0 120px}}
+@media(max-width:760px){.about{padding:70px 0 90px}.about-copy{margin-left:0;margin-bottom:60px}.skills .stack{margin-left:0}.about-education{margin-left:0;margin-bottom:44px}}
 
 /* ============================================================
    NEW: Cursor-following preview thumbnail for Service /
@@ -176,3 +244,28 @@ body.case-open{overflow:hidden}
 .connect{transition:background .3s ease,transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s ease}
 .connect:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(0,0,0,.2)}
 @media(prefers-reduced-motion:reduce){.hero-button,.hero-links a,.nav-cta,.work-card,.connect{transition:none}}
+
+/* ============================================================
+   Education rows (now living inside About) — plain bordered rows
+   in the site's own type/spacing language (same pattern as the
+   Experience and Build lists) instead of a boxed accent card, so
+   it reads as part of the same page rather than a bolted-on piece.
+   ============================================================ */
+.education-list{display:grid;gap:0;margin-top:8px;max-width:640px;border-top:1px solid var(--line)}
+.about-education-label{margin:0 0 18px;font:500 10px "DM Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.education-item{position:relative;padding:20px 0;border-bottom:1px solid var(--line);transition:padding-left .25s cubic-bezier(.22,1,.36,1)}
+.education-item h3{margin:0 0 8px;font-size:15px;font-weight:700;letter-spacing:-.01em;color:var(--ink);transition:color .25s ease}
+.education-item p{margin:0 0 6px;color:var(--muted);font-size:13px;line-height:1.4}
+.education-item span{display:block;color:var(--muted);font:500 11px "DM Mono",monospace;letter-spacing:.04em;text-transform:uppercase}
+.education-item:hover{padding-left:10px}
+.education-item:hover h3{color:var(--green)}
+.education-list.is-visible .education-item{animation:rowReveal .55s cubic-bezier(.22,1,.36,1) both}
+.education-list.is-visible .education-item:nth-child(2){animation-delay:.1s}
+@media(prefers-reduced-motion:reduce){.education-list.is-visible .education-item{animation:none!important}.education-item{transition:none}}
+
+/* ============================================================
+   NEW: Nav bar now carries a 4th link (Experience) — tighten the
+   gap slightly at the desktop breakpoint so it keeps its footing
+   next to the CTA button on smaller desktop widths.
+   ============================================================ */
+@media(max-width:1180px){.nav-links{gap:30px}}

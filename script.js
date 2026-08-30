@@ -27,6 +27,47 @@ document.querySelectorAll(".intro-nav, .intro-name, .intro-photo, .intro-copy").
 });
 
 /* ============================================================
+   Hero portrait "flashlight" reveal — a color copy of the photo
+   sits on top of a permanently greyscale copy. The color copy is
+   masked to a soft circle centered on the pointer, so it only
+   shows through in a spotlight around the cursor. Leaving the
+   frame sends the spotlight off-canvas so it reads as grey again.
+   ============================================================ */
+const heroPhoto = document.getElementById("hero-photo");
+
+if (heroPhoto && !reducedMotion) {
+  let heroFrame = null;
+
+  function moveHeroSpot(clientX, clientY) {
+    heroFrame = null;
+    const rect = heroPhoto.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+    heroPhoto.style.setProperty("--spot-x", `${x}px`);
+    heroPhoto.style.setProperty("--spot-y", `${y}px`);
+  }
+
+  function requestHeroSpotMove(clientX, clientY) {
+    if (heroFrame === null) heroFrame = window.requestAnimationFrame(() => moveHeroSpot(clientX, clientY));
+  }
+
+  function resetHeroSpot() {
+    heroPhoto.style.setProperty("--spot-x", "-9999px");
+    heroPhoto.style.setProperty("--spot-y", "-9999px");
+  }
+
+  heroPhoto.addEventListener("pointermove", (event) => requestHeroSpotMove(event.clientX, event.clientY));
+  heroPhoto.addEventListener("pointerleave", resetHeroSpot);
+
+  heroPhoto.addEventListener("touchmove", (event) => {
+    const touch = event.touches[0];
+    if (touch) requestHeroSpotMove(touch.clientX, touch.clientY);
+  }, { passive: true });
+
+  heroPhoto.addEventListener("touchend", resetHeroSpot);
+}
+
+/* ============================================================
    Scroll progress bar
    ============================================================ */
 const progressFill = document.getElementById("scrollProgressFill");
@@ -77,12 +118,9 @@ const elements = document.querySelectorAll(".reveal");
 if (reducedMotion) {
   elements.forEach((element) => element.classList.add("is-visible"));
 } else {
-  const observer = new IntersectionObserver((entries, currentObserver) => {
+  const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        currentObserver.unobserve(entry.target);
-      }
+      entry.target.classList.toggle("is-visible", entry.isIntersecting);
     });
   }, { threshold: 0.12, rootMargin: "0px 0px -8%" });
 
@@ -277,3 +315,44 @@ document.addEventListener("keydown", (event) => {
 
 const caseContact = document.getElementById("caseContact");
 if (caseContact) caseContact.addEventListener("click", closeCaseStudy);
+
+/* ============================================================
+   Skills stack — clickable pills. Each click bounces the pill,
+   bursts a small ripple from the exact point clicked/tapped, and
+   toggles a filled "selected" state that persists until clicked
+   again. Keyboard-accessible via Enter/Space.
+   ============================================================ */
+const skillPills = document.querySelectorAll(".stack span");
+
+function triggerSkillEffect(pill, xPercent, yPercent) {
+  pill.style.setProperty("--rx", `${xPercent}%`);
+  pill.style.setProperty("--ry", `${yPercent}%`);
+  pill.classList.toggle("is-active");
+
+  pill.classList.remove("is-popping", "is-rippling");
+  void pill.offsetWidth; // restart the animations even on rapid repeat clicks
+  pill.classList.add("is-popping", "is-rippling");
+}
+
+skillPills.forEach((pill) => {
+  pill.setAttribute("role", "button");
+  pill.setAttribute("tabindex", "0");
+
+  pill.addEventListener("click", (event) => {
+    const rect = pill.getBoundingClientRect();
+    const x = ((event.clientX - rect.left) / rect.width) * 100;
+    const y = ((event.clientY - rect.top) / rect.height) * 100;
+    triggerSkillEffect(pill, Number.isFinite(x) ? x : 50, Number.isFinite(y) ? y : 50);
+  });
+
+  pill.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    triggerSkillEffect(pill, 50, 50);
+  });
+
+  pill.addEventListener("animationend", (event) => {
+    if (event.animationName === "skillPop") pill.classList.remove("is-popping");
+    if (event.animationName === "skillRipple") pill.classList.remove("is-rippling");
+  });
+});
